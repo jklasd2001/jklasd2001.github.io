@@ -80,6 +80,7 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
 
   return (
     <style
+      // biome-ignore lint/security/noDangerouslySetInnerHtml: <THEME 주입>
       dangerouslySetInnerHTML={{
         __html: Object.entries(THEMES)
           .map(
@@ -125,6 +126,16 @@ function ChartTooltipContent({
     indicator?: 'line' | 'dot' | 'dashed'
     nameKey?: string
     labelKey?: string
+    payload?: {
+      dataKey: string
+      name: string
+      value?: number
+      payload: {
+        fill: string
+      }
+      color?: string
+    }[]
+    label?: string
   }) {
   const { config } = useChart()
 
@@ -193,7 +204,14 @@ function ChartTooltipContent({
               )}
             >
               {formatter && item?.value !== undefined && item.name ? (
-                formatter(item.value, item.name, item, index, item.payload)
+                // biome-ignore lint/suspicious/noExplicitAny: <TODO: 수정 필요>
+                formatter(
+                  item.value,
+                  item.name,
+                  item,
+                  index,
+                  item.payload as any,
+                )
               ) : (
                 <>
                   {itemConfig?.icon ? (
@@ -257,9 +275,19 @@ function ChartLegendContent({
   verticalAlign = 'bottom',
   nameKey,
 }: React.ComponentProps<'div'> &
-  Pick<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
+  Omit<RechartsPrimitive.LegendProps, 'payload' | 'verticalAlign'> & {
     hideIcon?: boolean
     nameKey?: string
+    payload?: {
+      dataKey: string
+      name: string
+      value?: number
+      payload: {
+        fill: string
+      }
+      color?: string
+    }[]
+    verticalAlign?: 'top' | 'bottom'
   }) {
   const { config } = useChart()
 
