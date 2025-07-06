@@ -1,0 +1,46 @@
+{
+	"name": "jklasd2001",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"preinstall": "pnpx only-allow bun",
+		"dev": "next dev --turbopack",
+		"dev:clean": "rm -rf .next && bun dev",
+		"build": "next build",
+		"start": "next start",
+		"i18n-check": "i18n-check --source ko --locales messages",
+		"clean-install": "rm -rf node_modules bun.lock .next && bun install"
+	},
+	"packageManager": "bun@1.2.18",
+	"engines": {
+		"bun": ">=1.2.18"
+	},
+	"dependencies": {
+		"@hookform/resolvers": "^5.1.1",
+		"@vis.gl/react-google-maps": "^1.5.3",
+		"class-variance-authority": "^0.7.1",
+		"clsx": "^2.1.1",
+		"lucide-react": "^0.525.0",
+		"next": "15.3.5",
+		"next-intl": "^4.3.4",
+		"next-themes": "^0.4.6",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"recharts": "^3.0.2",
+		"tailwind-merge": "^3.3.1",
+		"zod": "^3.25.74"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.6",
+		"@lingual/i18n-check": "^0.8.4",
+		"@t3-oss/env-nextjs": "^0.13.8",
+		"@tailwindcss/postcss": "^4.1.11",
+		"@types/node": "^24.0.10",
+		"@types/react": "^19.1.8",
+		"@types/react-dom": "^19.1.6",
+		"postcss": "^8.5.6",
+		"tailwindcss": "^4.1.11",
+		"tw-animate-css": "^1.3.5",
+		"typescript": "^5.8.3"
+	}
+}

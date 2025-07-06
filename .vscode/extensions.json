@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "eamodio.gitlens",
+    "vincaslt.highlight-matching-tag",
+    "ms-ceintl.vscode-language-pack-ko",
+    "pkief.material-icon-theme",
+    "equinusocio.vsc-material-theme",
+    "equinusocio.vsc-material-theme-icons",
+    "wayou.vscode-todo-highlight",
+    "codeandstuff.package-json-upgrade",
+    "biomejs.biome",
+    "bradlc.vscode-tailwindcss",
+    "austenc.tailwind-docs",
+    "lokalise.i18n-ally"
+  ]
+}
