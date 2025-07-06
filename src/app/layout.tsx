@@ -28,7 +28,7 @@ export default async function RootLayout({
   const locale = await getLocale()
   return (
     <html lang={locale} suppressHydrationWarning={true}>
-      <body className={` ${pretendard.className} antialiased`}>
+      <body className={`${pretendard.className} antialiased`}>
         <NextIntlClientProvider>
           <NuqsAdapter>
             <ThemeProvider>{children}</ThemeProvider>
