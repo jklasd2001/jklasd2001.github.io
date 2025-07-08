@@ -1,7 +1,9 @@
+import type { ReactNode } from 'react'
+
 export default function WeddingInvitationLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
-  return <div className="min-w-28 mx-auto">{children}</div>
+  return <div className="max-w-[520px] mx-auto">{children}</div>
 }

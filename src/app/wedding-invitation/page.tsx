@@ -1,35 +1,26 @@
-'use client'
+import ContactSection from './components/contact-section'
+import GallerySection from './components/gallery-section'
+import GreetingSection from './components/greeting-section'
+import IntroSection from './components/intro-section'
+import MapSection from './components/map-section'
+import Money from './components/money-section'
 
-import {
-  Map as KakaoMap,
-  MapMarker,
-  useKakaoLoader,
-} from 'react-kakao-maps-sdk'
-
-import { env } from 'src/env'
-
-export default function WeddingInvitation() {
-  const [loading, error] = useKakaoLoader({
-    appkey: env.NEXT_PUBLIC_KAKAO_REST_API_KEY,
-  })
-
-  if (loading) {
-    return <div>Loading...</div>
-  }
-
-  if (error) {
-    return <div>Error</div>
-  }
+const WeddingInvitation = () => {
   return (
     <div>
-      <KakaoMap
-        center={{ lat: 33.5563, lng: 126.79581 }}
-        style={{ width: '100%', height: '360px' }}
-      >
-        <MapMarker position={{ lat: 33.55635, lng: 126.795841 }}>
-          <div style={{ color: '#000' }}>Hello World!</div>
-        </MapMarker>
-      </KakaoMap>
+      <IntroSection />
+
+      <GreetingSection />
+
+      <GallerySection />
+
+      <MapSection />
+
+      <Money />
+
+      <ContactSection />
     </div>
   )
 }
+
+export default WeddingInvitation
