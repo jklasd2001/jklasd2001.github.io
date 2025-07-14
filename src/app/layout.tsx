@@ -9,6 +9,8 @@ import { ThemeProvider } from 'src/providers/theme-provider'
 
 import './globals.css'
 
+import OverlayProvider from 'src/providers/overlay-pprovider'
+
 const pretendard = localFont({
   src: '../../public/fonts/pretendard-variable.woff2',
   display: 'swap',
@@ -31,7 +33,9 @@ export default async function RootLayout({
       <body className={`${pretendard.className} antialiased`}>
         <NextIntlClientProvider>
           <NuqsAdapter>
-            <ThemeProvider>{children}</ThemeProvider>
+            <ThemeProvider>
+              <OverlayProvider>{children}</OverlayProvider>
+            </ThemeProvider>
 
             <Toaster />
           </NuqsAdapter>
