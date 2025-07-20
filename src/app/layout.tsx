@@ -5,21 +5,28 @@ import { getLocale } from 'next-intl/server'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { Toaster } from 'sonner'
 
+import OverlayProvider from 'src/providers/overlay-pprovider'
 import { ThemeProvider } from 'src/providers/theme-provider'
 
 import './globals.css'
 
-import OverlayProvider from 'src/providers/overlay-pprovider'
+import Script from 'next/script'
 
-const pretendard = localFont({
-  src: '../../public/fonts/pretendard-variable.woff2',
+const sometimesTimes = localFont({
+  src: '../../public/fonts/sometimes-times.woff2',
   display: 'swap',
-  variable: '--font-pretendard',
+  variable: '--font-sometimes-times',
+})
+
+const suit = localFont({
+  src: '../../public/fonts/suit-variable.woff2',
+  display: 'swap',
+  variable: '--font-suit',
 })
 
 export const metadata: Metadata = {
-  title: 'JKLASD2001',
-  description: 'JKLASD2001',
+  title: 'Young Su & Hyun Ah',
+  description: 'Young Su & Hyun Ah',
 }
 
 export default async function RootLayout({
@@ -30,7 +37,9 @@ export default async function RootLayout({
   const locale = await getLocale()
   return (
     <html lang={locale} suppressHydrationWarning={true}>
-      <body className={`${pretendard.className} antialiased`}>
+      <body
+        className={`${sometimesTimes.variable} ${suit.variable} antialiased`}
+      >
         <NextIntlClientProvider>
           <NuqsAdapter>
             <ThemeProvider>
@@ -41,6 +50,11 @@ export default async function RootLayout({
           </NuqsAdapter>
         </NextIntlClientProvider>
       </body>
+
+      <Script
+        src="https://developers.kakao.com/sdk/js/kakao.js"
+        strategy="afterInteractive"
+      />
     </html>
   )
 }

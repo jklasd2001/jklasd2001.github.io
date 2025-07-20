@@ -5,8 +5,10 @@ export const env = createEnv({
   server: {},
   client: {
     NEXT_PUBLIC_KAKAO_REST_API_KEY: z.string(),
+    NEXT_PUBLIC_URL: z.string(),
   },
   runtimeEnv: {
     NEXT_PUBLIC_KAKAO_REST_API_KEY: process.env.NEXT_PUBLIC_KAKAO_REST_API_KEY,
+    NEXT_PUBLIC_URL: process.env.NEXT_PUBLIC_URL,
   },
 })

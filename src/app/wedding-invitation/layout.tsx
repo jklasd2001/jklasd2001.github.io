@@ -5,5 +5,5 @@ export default function WeddingInvitationLayout({
 }: {
   children: ReactNode
 }) {
-  return <div className="max-w-[520px] mx-auto">{children}</div>
+  return children
 }
