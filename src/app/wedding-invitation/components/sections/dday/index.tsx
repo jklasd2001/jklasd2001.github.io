@@ -84,11 +84,11 @@ const Dday = () => {
 
         <div className="flex flex-col gap-2 items-center">
           <p className="text-pretty break-keep">
-            2026년 3월 7일 토요일 | 오후 12시
+            2026년 3월 7일 토요일 | 오후 13시 40분
           </p>
 
           <p className="text-pretty font-light text-black-default">
-            Saturday, March 7, 2026 | PM 12:00
+            Saturday, March 7, 2026 | PM 13:40
           </p>
         </div>
       </div>
@@ -165,22 +165,22 @@ const Dday = () => {
       {/* 카운트다운 */}
       <div className="flex flex-col gap-8">
         <div className="grid grid-cols-4 gap-3">
-          <div className="bg-white rounded-lg p-4 text-center shadow-lg flex flex-col gap-4">
+          <div className="bg-white rounded-lg py-4 text-center shadow-lg flex flex-col gap-4">
             <div className="text-2xl text-gray-800">{timeLeft.days}</div>
             <div className="text-xs text-gray-500">DAYS</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 text-center shadow-lg flex flex-col gap-4">
+          <div className="bg-white rounded-lg py-4 text-center shadow-lg flex flex-col gap-4">
             <div className="text-2xl text-gray-800">{timeLeft.hours}</div>
             <div className="text-xs text-gray-500">HOURS</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 text-center shadow-lg flex flex-col gap-4">
+          <div className="bg-white rounded-lg py-4 text-center shadow-lg flex flex-col gap-4">
             <div className="text-2xl text-gray-800">{timeLeft.minutes}</div>
             <div className="text-xs text-gray-500">MINUTES</div>
           </div>
 
-          <div className="bg-white rounded-lg p-4 text-center shadow-lg flex flex-col gap-4">
+          <div className="bg-white rounded-lg py-4 text-center shadow-lg flex flex-col gap-4">
             <div className="text-2xl text-gray-800">{timeLeft.seconds}</div>
             <div className="text-xs text-gray-500">SECONDS</div>
           </div>

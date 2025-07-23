@@ -10,6 +10,11 @@ import { toast } from 'sonner'
 import { env } from 'src/env'
 
 import SectionTitle from '../../section-title'
+import Row from './components/row'
+import Bus from './svgs/bus'
+import Car from './svgs/car'
+import Parking from './svgs/parking'
+import Train from './svgs/train'
 
 const LocationSection = () => {
   const [loading, error] = useKakaoLoader({
@@ -19,13 +24,6 @@ const LocationSection = () => {
   const handleCopyAddress = () => {
     navigator.clipboard.writeText('부산광역시 연제구 월드컵대로 344')
     toast.success('주소가 복사되었습니다.')
-  }
-
-  const handleOpenKakaoMap = () => {
-    window.open(
-      'https://map.kakao.com/link/map/웨스틴조선호텔,37.5647,126.9757',
-      '_blank',
-    )
   }
 
   if (loading) {
@@ -56,7 +54,7 @@ const LocationSection = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-center gap-2">
-            <span className="text-gray-800">아시아드시티 웨딩</span>
+            <span className="text-gray-800">아시아드시티 웨딩홀</span>
 
             <a href="tel:051-500-4500">
               <svg
@@ -156,85 +154,38 @@ const LocationSection = () => {
       </div>
 
       {/* 교통 정보 */}
-      <div className="space-y-4 px-6">
-        {/* 자차 */}
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <svg
-              role="img"
-              aria-label="Car"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-gray-600"
-            >
-              <path
-                d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 12.4 1 13.1 1 13.9V16c0 .6.4 1 1 1h2"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle
-                cx="7"
-                cy="17"
-                r="2"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              <circle
-                cx="17"
-                cy="17"
-                r="2"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-            </svg>
-            <span className="font-medium text-gray-800">자차</span>
-          </div>
-          <div className="text-sm text-gray-600 space-y-1">
-            <p>내비게이션 : '서울 웨스틴조선호텔' 검색</p>
-            <p>서울시 중구 소공로 106 서울 웨스틴조선호텔</p>
-          </div>
-        </div>
+      <div className="flex flex-col gap-4 px-8">
+        <Row icon={<Car />} title="자차">
+          <p className="flex flex-col gap-1 text-sm text-[#111]">
+            <span>네비게이션: '아시아드 시티 웨딩' 검색</span>
 
-        {/* 구분선 */}
-        <div className="w-full h-px bg-gray-300" />
+            <span>부산광역시 연제구 월드컵대로 344</span>
+          </p>
+        </Row>
 
-        {/* 버스 */}
-        <div>
-          <div className="flex items-center gap-2 mb-2">
-            <svg
-              role="img"
-              aria-label="Bus"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              className="text-gray-600"
-            >
-              <path
-                d="M8 6v2m8-2v2m-8 4h8m-8 4h8m-8 2h8M6 6h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span className="font-medium text-gray-800">버스</span>
+        <Row icon={<Train />} title="지하철 ('부산역' 출발 기준)">
+          <div className="flex flex-col text-sm text-[#111] gap-6">
+            <p className="flex flex-col gap-4">
+              <span className="text-[#f0602f]">1호선</span>
+
+              <span>{'부산역 > 연산역 (3호선으로 환승)'}</span>
+            </p>
+
+            <p className="flex flex-col gap-4">
+              <span className="text-[#d4a556]">3호선</span>
+              <span>
+                {'연산역 > 종합운동장역 하차 > 9번 출구에서 셔틀버스 탑승'}
+              </span>
+            </p>
           </div>
-          <div className="text-sm text-gray-600 space-y-2">
-            <div>
-              <p className="font-medium">172(우리은행종로지점 방면)</p>
-              <p>{'서울광장역 하차 > 데미타스커피 왼쪽 방면 > 도보 5분'}</p>
-            </div>
-            <div>
-              <p className="font-medium">405(롯데백화점 방면)</p>
-              <p>{'서울광장역 하차 > 데미타스커피 왼쪽 방면 > 도보 5분'}</p>
-            </div>
-          </div>
-        </div>
+        </Row>
+
+        <Row icon={<Parking />} title="주차">
+          <p className="flex flex-col gap-1 text-sm text-[#111]">
+            <span>하객 2시간 무료</span>
+            <span>주차 요원 안내를 받아주세요.</span>
+          </p>
+        </Row>
       </div>
     </section>
   )

@@ -1,10 +1,10 @@
 const CoupleInfoSection = () => {
   return (
-    <section className="px-6 py-20 bg-[#ebf1e0]">
+    <section className="px-6 py-20 bg-wedding-green-bg">
       {/* 신랑 섹션 */}
       <div className="text-center mb-8">
         {/* 신랑 라벨 */}
-        <div className="inline-block bg-green-400 text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
+        <div className="inline-block bg-wedding-green text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
           신랑
         </div>
 
@@ -29,7 +29,7 @@ const CoupleInfoSection = () => {
       {/* 신부 섹션 */}
       <div className="text-center mb-8">
         {/* 신부 라벨 */}
-        <div className="inline-block bg-green-400 text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
+        <div className="inline-block bg-wedding-green text-white px-4 py-1 rounded-full text-sm font-medium mb-4">
           신부
         </div>
 
@@ -41,7 +41,7 @@ const CoupleInfoSection = () => {
 
         {/* 신부 부모님 */}
         <div className="mb-2">
-          <p className="text-gray-800">박영희 | 김영희</p>
+          <p className="text-gray-800">박병호 | 김영자</p>
         </div>
 
         {/* 관계 */}
@@ -51,7 +51,7 @@ const CoupleInfoSection = () => {
       {/* 연락하기 버튼 */}
       <button
         type="button"
-        className="w-full bg-green-400 text-white py-4 px-6 rounded-lg flex items-center justify-between hover:bg-green-500 transition-colors"
+        className="w-full bg-wedding-green text-white py-4 px-6 rounded-lg flex items-center justify-between"
       >
         <span className="font-medium">축하 연락하기</span>
         <svg

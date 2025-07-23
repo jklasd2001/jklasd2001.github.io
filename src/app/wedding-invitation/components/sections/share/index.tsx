@@ -68,9 +68,10 @@ const ShareSection = () => {
         <button
           type="button"
           onClick={handleKakaoShare}
-          className="w-full bg-yellow-300 text-gray-800 py-4 px-6 rounded-lg flex items-center justify-between hover:bg-yellow-400 transition-colors"
+          className="w-full bg-wedding-yellow py-4 px-6 rounded-lg flex items-center justify-between text-sm"
         >
-          <span className="font-medium">카카오톡으로 청첩장 전하기</span>
+          <span>카카오톡으로 청첩장 전하기</span>
+
           <svg
             role="img"
             aria-label="Kakao share"
@@ -93,10 +94,11 @@ const ShareSection = () => {
         {/* 주소 복사 버튼 */}
         <button
           type="button"
-          className="w-full bg-green-400 text-white py-4 px-6 rounded-lg flex items-center justify-between hover:bg-green-500 transition-colors"
+          className="w-full bg-wedding-green text-white py-4 px-6 rounded-lg flex items-center justify-between text-sm"
           onClick={handleCopyAddress}
         >
-          <span className="font-medium">청첩장 주소 복사하기</span>
+          <span>청첩장 주소 복사하기</span>
+
           <svg
             role="img"
             aria-label="Copy address"

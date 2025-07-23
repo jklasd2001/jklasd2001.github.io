@@ -230,11 +230,11 @@ const IntroSection = () => {
 
       <div className="">
         <p className="absolute top-[5rem] flex flex-col w-full z-10 text-4xl text-center text-white font-sometimes-times">
-          Young Su & Hyun Ah
+          Young Su & Hyun A
         </p>
 
         <div className="absolute bottom-[5rem] flex flex-col w-full z-10 text-base text-center gap-2 text-white">
-          <span>2026년 3월 7일 토요일 오후 1시 30분</span>
+          <span>2026년 3월 7일 토요일 오후 1시 40분</span>
 
           <span>부산 아시아드 시티 웨딩홀</span>
         </div>

@@ -45,6 +45,10 @@
 
   --color-black-default: var(--color-black-default);
   --color-black-secondary: var(--color-black-secondary);
+
+  --color-wedding-yellow: var(--color-wedding-yellow);
+  --color-wedding-green: var(--color-wedding-green);
+  --color-wedding-green-bg: var(--color-wedding-green-bg);
 }
 
 :root {
@@ -83,6 +87,9 @@
 
   --color-black-default: #111;
   --color-black-secondary: #020817;
+  --color-wedding-yellow: #FCE777;
+  --color-wedding-green: #AFC18B;
+  --color-wedding-green-bg: #ebf1e0;
 }
 
 .dark {
