@@ -189,7 +189,7 @@ const Dday = () => {
         {/* 하단 메시지 */}
         <div className="text-center text-sm text-gray-600">
           영수♥ 현아 결혼식이{' '}
-          <span className="text-green-500 font-medium">
+          <span className="text-wedding-green font-medium">
             {timeLeft.totalDays}
           </span>
           일 남았습니다
