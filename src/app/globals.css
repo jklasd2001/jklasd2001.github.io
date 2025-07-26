@@ -42,13 +42,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
   --color-black-default: var(--color-black-default);
   --color-black-secondary: var(--color-black-secondary);
-
   --color-wedding-yellow: var(--color-wedding-yellow);
   --color-wedding-green: var(--color-wedding-green);
   --color-wedding-green-bg: var(--color-wedding-green-bg);
+  --color-bg-body: var(--color-bg-body);
 }
 
 :root {
@@ -84,12 +83,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-
   --color-black-default: #111;
   --color-black-secondary: #020817;
   --color-wedding-yellow: #FCE777;
   --color-wedding-green: #AFC18B;
   --color-wedding-green-bg: #ebf1e0;
+  --color-bg-body: #d0dbb8
 }
 
 .dark {
@@ -131,7 +130,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply text-foreground font-suit;
+    @apply text-foreground font-suit bg-bg-body;
   }
 }
 

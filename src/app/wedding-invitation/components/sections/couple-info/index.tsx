@@ -36,7 +36,7 @@ const CoupleInfoSection = () => {
         {/* 신부 이름 */}
         <div className="mb-4">
           <h2 className="text-2xl font-bold text-gray-800 mb-1">현아</h2>
-          <p className="text-sm text-gray-500">SUYEON</p>
+          <p className="text-sm text-gray-500">HYUNA</p>
         </div>
 
         {/* 신부 부모님 */}
