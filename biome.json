@@ -1,25 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "includes": [
-      "**",
-      "!**/node_modules",
-      "!**/styled-system",
-      "!**/src/routeTree.gen.ts",
-      "!**/dist"
-    ]
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "indentWidth": 2
-  },
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -30,60 +10,48 @@
               [":URL:", ":BUN:", ":NODE:"],
               ":BLANK_LINE:",
               {
-                "type": true,
-                "source": [":PACKAGE:", "!src/**", "!styled-system/**"]
+                "source": [":PACKAGE:", "!src/**", "!styled-system/**"],
+                "type": true
               },
               [":PACKAGE:", "!src/**", "!styled-system/**"],
               ":BLANK_LINE:",
               {
-                "type": true,
-                "source": ["styled-system/**"]
+                "source": ["styled-system/**"],
+                "type": true
               },
               "styled-system/**",
               ":BLANK_LINE:",
               {
-                "type": true,
-                "source": ["src/**"]
+                "source": ["src/**"],
+                "type": true
               },
               "src/**",
               ":BLANK_LINE:",
               {
-                "type": true,
-                "source": [":PATH:"]
+                "source": [":PATH:"],
+                "type": true
               },
-              [":PATH:"]
+              ":PATH:"
             ]
           }
-        }
+        },
+        "useSortedKeys": "off"
       }
     }
   },
-  "linter": {
+  "files": {
+    "ignoreUnknown": false,
+    "includes": ["**", "!**/node_modules", "!**/styled-system"]
+  },
+  "formatter": {
     "enabled": true,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "useExhaustiveDependencies": "off",
-        "noUnusedImports": "error"
-      },
-      "suspicious": {
-        "noArrayIndexKey": "off"
-      },
-      "a11y": {
-        "useKeyWithClickEvents": "off"
-      },
-      "style": {
-        "noParameterAssign": "error",
-        "useAsConstAssertion": "error",
-        "useDefaultParameterLast": "error",
-        "useEnumInitializers": "error",
-        "useSelfClosingElements": "error",
-        "useSingleVarDeclarator": "error",
-        "noUnusedTemplateLiteral": "error",
-        "useNumberNamespace": "error",
-        "noInferrableTypes": "error",
-        "noUselessElse": "error"
-      }
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
     }
   },
   "json": {
@@ -91,10 +59,40 @@
       "trailingCommas": "none"
     }
   },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "semicolons": "asNeeded"
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "a11y": {
+        "useKeyWithClickEvents": "off"
+      },
+      "correctness": {
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "warn"
+        },
+        "useExhaustiveDependencies": "off"
+      },
+      "recommended": true,
+      "style": {
+        "noInferrableTypes": "error",
+        "noParameterAssign": "error",
+        "noUnusedTemplateLiteral": "error",
+        "noUselessElse": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useNumberNamespace": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "off"
+      }
     }
+  },
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": false
   }
 }

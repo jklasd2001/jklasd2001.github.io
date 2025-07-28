@@ -1,27 +1,23 @@
 'use client'
 
+import { useInView } from '@react-spring/web'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
+import Trail from 'src/components/trail'
+
+import type { Petal } from './helpers/types'
 import { generateRandomNumber } from '../../../utils/math'
 
-interface Petal {
-  x: number
-  y: number
-  size: number
-  speed: number
-  rotation: number
-  rotationSpeed: number
-  sway: number
-  swaySpeed: number
-  opacity: number
-  color: string
-}
-
 const IntroSection = () => {
+  const [ref, isInView] = useInView({
+    amount: 0.5,
+    once: true,
+  })
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationRef = useRef<number>(null)
   const petalsRef = useRef<Petal[]>([])
+  const imageRef = useRef<HTMLImageElement | null>(null)
   const isShow = true
 
   // 꽃잎 색상 배열 (하얀색 계열)
@@ -33,6 +29,18 @@ const IntroSection = () => {
     '#FAFAFA', // 미색
   ]
 
+  // 이미지 미리 로드
+  useEffect(() => {
+    const img = new window.Image()
+    img.onload = () => {
+      imageRef.current = img
+    }
+    img.onerror = () => {
+      console.log('이미지 로드 실패, 기본 꽃잎 모양 사용')
+    }
+    img.src = '/images/tullip_1.png'
+  }, [])
+
   // 꽃잎 그리기 함수
   const drawPetal = (ctx: CanvasRenderingContext2D, petal: Petal) => {
     ctx.save()
@@ -40,63 +48,68 @@ const IntroSection = () => {
     ctx.rotate((petal.rotation * Math.PI) / 180)
     ctx.globalAlpha = petal.opacity
 
-    // 벚꽃잎 모양 그리기 (자연스러운 곡선)
-    ctx.beginPath()
-    ctx.fillStyle = petal.color
+    if (imageRef.current) {
+      // 이미지가 로드된 경우 이미지 그리기
+      const imgWidth = petal.size * 2
+      const imgHeight = petal.size * 2
 
-    // 벚꽃잎의 자연스러운 모양 (하트 모양의 변형)
-    const width = petal.size
-    const height = petal.size * 0.8
+      ctx.drawImage(
+        imageRef.current,
+        -imgWidth / 2,
+        -imgHeight / 2,
+        imgWidth,
+        imgHeight,
+      )
+    } else {
+      // 이미지가 로드되지 않은 경우 기본 꽃잎 모양 그리기
+      ctx.beginPath()
+      ctx.fillStyle = petal.color
 
-    ctx.moveTo(0, -height * 0.3)
-    ctx.bezierCurveTo(
-      -width * 0.5,
-      -height * 0.8,
-      -width * 0.8,
-      -height * 0.2,
-      -width * 0.3,
-      0,
-    )
-    ctx.bezierCurveTo(
-      -width * 0.8,
-      height * 0.2,
-      -width * 0.5,
-      height * 0.8,
-      0,
-      height * 0.3,
-    )
-    ctx.bezierCurveTo(
-      width * 0.5,
-      height * 0.8,
-      width * 0.8,
-      height * 0.2,
-      width * 0.3,
-      0,
-    )
-    ctx.bezierCurveTo(
-      width * 0.8,
-      -height * 0.2,
-      width * 0.5,
-      -height * 0.8,
-      0,
-      -height * 0.3,
-    )
+      const width = petal.size
+      const height = petal.size * 0.8
 
-    ctx.fill()
+      ctx.moveTo(0, -height * 0.3)
+      ctx.bezierCurveTo(
+        -width * 0.5,
+        -height * 0.8,
+        -width * 0.8,
+        -height * 0.2,
+        -width * 0.3,
+        0,
+      )
+      ctx.bezierCurveTo(
+        -width * 0.8,
+        height * 0.2,
+        -width * 0.5,
+        height * 0.8,
+        0,
+        height * 0.3,
+      )
+      ctx.bezierCurveTo(
+        width * 0.5,
+        height * 0.8,
+        width * 0.8,
+        height * 0.2,
+        width * 0.3,
+        0,
+      )
+      ctx.bezierCurveTo(
+        width * 0.8,
+        -height * 0.2,
+        width * 0.5,
+        -height * 0.8,
+        0,
+        -height * 0.3,
+      )
 
-    // 꽃잎 중앙에 작은 원 추가 (벚꽃의 암술/수술 표현)
-    ctx.beginPath()
-    ctx.fillStyle = '#FFF8F8'
-    ctx.arc(0, 0, petal.size * 0.15, 0, 2 * Math.PI)
-    ctx.fill()
+      ctx.fill()
+    }
 
     ctx.restore()
   }
 
   // 꽃잎 초기화
   const initializePetals = () => {
-    if (typeof window === 'undefined') return
-
     const newPetals = Array.from({ length: 45 }).map(() => {
       // 화면을 3개 구역으로 나누어 균등하게 분포
       const section = Math.floor(Math.random() * 3)
@@ -125,10 +138,16 @@ const IntroSection = () => {
   // 애니메이션 함수
   const animate = () => {
     const canvas = canvasRef.current
-    if (!canvas || !isShow || typeof window === 'undefined') return
+
+    if (!canvas || !isShow) {
+      return
+    }
 
     const ctx = canvas.getContext('2d')
-    if (!ctx) return
+
+    if (!ctx) {
+      return
+    }
 
     // 캔버스 크기 설정
     canvas.width = window.innerWidth
@@ -216,11 +235,13 @@ const IntroSection = () => {
   }, [])
 
   return (
-    <section className="flex flex-col relative h-screen">
+    <section ref={ref} className="flex flex-col relative h-screen">
       <Image
         src="/images/martinique.jpg"
         alt="intro"
         fill={true}
+        priority={true}
+        sizes="(max-width: 768px) 100vw"
         className="absolute inset-0 object-cover w-full h-full"
       />
 
@@ -228,17 +249,19 @@ const IntroSection = () => {
         <canvas ref={canvasRef} className="w-full h-full pointer-events-none" />
       </div>
 
-      <div className="">
+      <Trail open={isInView}>
         <p className="absolute top-[5rem] flex flex-col w-full z-10 text-4xl text-center text-white font-sometimes-times">
           Young Su & Hyun A
         </p>
+      </Trail>
 
+      <Trail open={isInView} delay={200}>
         <div className="absolute bottom-[5rem] flex flex-col w-full z-10 text-base text-center gap-2 text-white">
           <span>2026년 3월 7일 토요일 오후 1시 40분</span>
 
           <span>부산 아시아드 시티 웨딩홀</span>
         </div>
-      </div>
+      </Trail>
     </section>
   )
 }
