@@ -11,30 +11,32 @@ import WeddingDay from './components/sections/wedding-day'
 
 const WeddingInvitation = () => {
   return (
-    <div className="max-w-md mx-auto bg-white">
-      <IntroSection />
+    <div className="text-foreground font-suit bg-bg-body">
+      <div className="max-w-md mx-auto bg-white">
+        <IntroSection />
 
-      <GreetingSection />
+        <GreetingSection />
 
-      <Image
-        alt="wedding"
-        src="/images/invite.jpg"
-        width={440}
-        height={660}
-        className="w-full h-auto"
-      />
+        <Image
+          alt="wedding"
+          src="/images/invite.jpg"
+          width={440}
+          height={660}
+          className="w-full h-auto"
+        />
 
-      <WeddingDay />
+        <WeddingDay />
 
-      <Dday />
+        <Dday />
 
-      <CoupleInfoSection />
+        <CoupleInfoSection />
 
-      <GallerySection />
+        <GallerySection />
 
-      <LocationSection />
+        <LocationSection />
 
-      <ShareSection />
+        <ShareSection />
+      </div>
     </div>
   )
 }

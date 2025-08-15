@@ -1,6 +1,0 @@
-export { Achievements } from './achievements'
-export { Career } from './career'
-export { CoreSkills } from './core-skills'
-export { Education } from './education'
-export { ResumeHeader } from './header'
-export { TechStack } from './tech-stack'

@@ -132,7 +132,7 @@
   }
 
   body {
-    @apply text-foreground font-suit bg-bg-body overscroll-none;
+    @apply overscroll-none;
   }
 }
 

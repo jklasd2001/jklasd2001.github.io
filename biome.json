@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.1.3/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -10,10 +10,15 @@
               [":URL:", ":BUN:", ":NODE:"],
               ":BLANK_LINE:",
               {
-                "source": [":PACKAGE:", "!src/**", "!styled-system/**"],
+                "source": [
+                  ":PACKAGE:",
+                  "!src/**",
+                  "!styled-system/**",
+                  "!images/**"
+                ],
                 "type": true
               },
-              [":PACKAGE:", "!src/**", "!styled-system/**"],
+              [":PACKAGE:", "!src/**", "!styled-system/**", "!images/**"],
               ":BLANK_LINE:",
               {
                 "source": ["styled-system/**"],
@@ -26,6 +31,8 @@
                 "type": true
               },
               "src/**",
+              ":BLANK_LINE:",
+              "images/**",
               ":BLANK_LINE:",
               {
                 "source": [":PATH:"],

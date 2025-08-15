@@ -19,7 +19,8 @@
       }
     ],
     "paths": {
-      "src/*": ["./src/*"]
+      "src/*": ["./src/*"],
+      "images/*": ["./public/images/*"]
     },
     "types": ["react-kakao-maps-sdk"]
   },
