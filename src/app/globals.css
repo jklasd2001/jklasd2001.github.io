@@ -7,6 +7,7 @@
 @theme inline {
   --font-suit: var(--font-suit);
   --font-sometimes-times: var(--font-sometimes-times);
+  --font-pretendard: var(--font-pretendard);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -129,8 +130,9 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply text-foreground font-suit bg-bg-body;
+    @apply text-foreground font-suit bg-bg-body overscroll-none;
   }
 }
 

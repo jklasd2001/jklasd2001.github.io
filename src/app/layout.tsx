@@ -24,6 +24,12 @@ const suit = localFont({
   variable: '--font-suit',
 })
 
+const pretendard = localFont({
+  src: '../../public/fonts/pretendard-variable.woff2',
+  display: 'swap',
+  variable: '--font-pretendard',
+})
+
 export const metadata: Metadata = {
   title: 'Young Su & Hyun Ah',
   description: 'Young Su & Hyun Ah',
@@ -38,7 +44,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning={true}>
       <body
-        className={`${sometimesTimes.variable} ${suit.variable} antialiased`}
+        className={`${sometimesTimes.variable} ${suit.variable} ${pretendard.variable} antialiased`}
       >
         <NextIntlClientProvider>
           <NuqsAdapter>
