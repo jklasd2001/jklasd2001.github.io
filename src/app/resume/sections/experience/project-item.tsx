@@ -22,20 +22,20 @@ export default function ProjectItem({
           {title}
         </h4>
 
-        <span className="text-sm text-gray-400 print:text-xs">{period}</span>
+        <span className="text-sm text-gray-600 print:text-xs">{period}</span>
       </div>
 
-      <p className="text-gray-400 text-base italic print:text-sm">
+      <p className="text-gray-600 text-base italic print:text-sm">
         {description}
       </p>
 
-      <ul className="text-gray-600 text-base print:text-sm space-y-1 ml-4">
+      <ul className="text-gray-600 text-base print:text-sm space-y-1 pl-5 list-disc">
         {improvements.map((improvement) => (
-          <li key={improvement}>• {improvement}</li>
+          <li key={improvement}>{improvement}</li>
         ))}
       </ul>
 
-      <p className="text-gray-500 text-sm print:text-xs">{skills.join(', ')}</p>
+      <p className="text-gray-600 text-sm print:text-xs">{skills.join(', ')}</p>
     </div>
   )
 }

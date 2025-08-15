@@ -1,5 +1,6 @@
 import { SectionContainer } from '../../components/section-container'
 import { SectionTitle } from '../../components/section-title'
+import StackItem from './stack-item'
 
 export function TechStack() {
   return (
@@ -7,41 +8,20 @@ export function TechStack() {
       <SectionTitle>Tech Stack</SectionTitle>
 
       <div className="space-y-4 print:space-y-3">
-        <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800 print:text-base">Core</h3>
+        <StackItem
+          title="코어"
+          description="TypeScript, React, Next.js, React Native"
+        />
 
-          <p className="text-gray-600 text-sm print:text-sm">
-            TypeScript, React, Next.js, React Native
-          </p>
-        </div>
+        <StackItem title="스타일링" description="Panda CSS, Tailwind CSS" />
 
-        <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800 print:text-base">
-            Styling
-          </h3>
+        <StackItem title="상태 관리" description="Zustand" />
 
-          <p className="text-gray-600 text-sm print:text-sm">
-            Panda CSS, Tailwind CSS
-          </p>
-        </div>
+        <StackItem title="빌드" description="Vite, Turbopack" />
 
-        <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800 print:text-base">
-            State Management
-          </h3>
+        <StackItem title="패키지 매니저" description="Bun" />
 
-          <p className="text-gray-600 text-sm print:text-sm">Zustand</p>
-        </div>
-
-        <div className="space-y-2">
-          <h3 className="font-semibold text-gray-800 mb-2 print:text-sm">
-            Data & API
-          </h3>
-
-          <p className="text-gray-600 text-sm print:text-sm">
-            React Query, GraphQL(Apollo Client)
-          </p>
-        </div>
+        <StackItem title="CI/CD" description="Github Actions, AWS Amplify" />
       </div>
     </SectionContainer>
   )

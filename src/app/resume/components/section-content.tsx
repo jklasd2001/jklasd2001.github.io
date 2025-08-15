@@ -3,5 +3,5 @@ export default function SectionContent({
 }: {
   children: React.ReactNode
 }) {
-  return <div className="flex-1 space-y-4 print:space-y-3">{children}</div>
+  return <div className="flex-1 space-y-6 print:space-y-4">{children}</div>
 }
