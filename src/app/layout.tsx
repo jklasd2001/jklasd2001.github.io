@@ -5,7 +5,7 @@ import { getLocale } from 'next-intl/server'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { Toaster } from 'sonner'
 
-import OverlayProvider from 'src/providers/overlay-pprovider'
+import OverlayProvider from 'src/providers/overlay-provider'
 import { ThemeProvider } from 'src/providers/theme-provider'
 
 import './globals.css'
