@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import Script from 'next/script'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { Toaster } from 'sonner'
 
-import OverlayProvider from 'src/providers/overlay-pprovider'
+import OverlayProvider from 'src/providers/overlay-provider'
 import { ThemeProvider } from 'src/providers/theme-provider'
 
 import './globals.css'
-
-import Script from 'next/script'
 
 const sometimesTimes = localFont({
   src: '../../public/fonts/sometimes-times.woff2',

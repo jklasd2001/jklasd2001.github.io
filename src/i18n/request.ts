@@ -1,7 +1,8 @@
 import { getRequestConfig } from 'next-intl/server'
 
 import { getUserLocale } from 'src/services/locale'
-import { type Locale, defaultLocale, locales } from './config'
+
+import { defaultLocale, type Locale, locales } from './config'
 
 export default getRequestConfig(async () => {
   // This typically corresponds to the `[locale]` segment

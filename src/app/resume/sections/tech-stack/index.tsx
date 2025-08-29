@@ -13,7 +13,10 @@ export function TechStack() {
           description="TypeScript, React, Next.js, React Native"
         />
 
-        <StackItem title="스타일링" description="Panda CSS, Tailwind CSS" />
+        <StackItem
+          title="스타일링"
+          description="Panda CSS, Tailwind CSS, Emotion"
+        />
 
         <StackItem title="상태 관리" description="Zustand" />
 
