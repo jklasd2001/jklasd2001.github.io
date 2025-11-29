@@ -1,3 +1,4 @@
+import AccountSection from './components/sections/account'
 import CoupleInfoSection from './components/sections/couple-info'
 import Dday from './components/sections/dday'
 import GallerySection from './components/sections/gallery'
@@ -22,6 +23,8 @@ const WeddingInvitation = () => {
         <CoupleInfoSection />
 
         <GallerySection />
+
+        <AccountSection />
 
         <LocationSection />
 
