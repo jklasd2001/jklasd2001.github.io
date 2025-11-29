@@ -11,7 +11,6 @@ import { env } from 'src/env'
 
 import SectionTitle from '../../section-title'
 import Row from './components/row'
-import Bus from './svgs/bus'
 import Car from './svgs/car'
 import Parking from './svgs/parking'
 import Train from './svgs/train'
@@ -120,11 +119,13 @@ const LocationSection = () => {
       <div className="relative mb-6">
         <div className="rounded-lg overflow-hidden border border-gray-200">
           <KakaoMap
-            center={{ lat: 35.189946, lng: 129.059668 }}
+            center={{ lat: 35.190574354708716, lng: 129.05947283549617 }}
             style={{ width: '100%', height: '224px' }}
             level={3}
           >
-            <MapMarker position={{ lat: 35.189946, lng: 129.059668 }} />
+            <MapMarker
+              position={{ lat: 35.190574354708716, lng: 129.05947283549617 }}
+            />
           </KakaoMap>
         </div>
 

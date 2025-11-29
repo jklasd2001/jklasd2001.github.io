@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import CoupleInfoSection from './components/sections/couple-info'
 import Dday from './components/sections/dday'
 import GallerySection from './components/sections/gallery'
@@ -16,14 +14,6 @@ const WeddingInvitation = () => {
         <IntroSection />
 
         <GreetingSection />
-
-        <Image
-          alt="wedding"
-          src="/images/invite.jpg"
-          width={440}
-          height={660}
-          className="w-full h-auto"
-        />
 
         <WeddingDay />
 

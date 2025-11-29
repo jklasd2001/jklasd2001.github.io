@@ -22,23 +22,17 @@ const GreetingSection = () => {
 
       <div className="flex flex-col text-center leading-8 text-[#555] text-[15.2px]">
         <Trail open={isInView} duration={150}>
-          <span>사람이 온다는 건 실은 어마어마한 일이다.</span>
+          <span>두 사람의 계절이 만나</span>
 
-          <span>그는 그의 과거와 현재와 그리고</span>
+          <span>하나의 봄을 피웁니다</span>
 
-          <span>그의 미래와 함께 오기 때문이다.</span>
+          <span>사랑으로 쌓아온 오늘을</span>
 
-          <span>한 사람의 일생이 오기 때문이다.</span>
+          <span>영원으로 약속하려 합니다.</span>
 
-          <br />
+          <span>저희의 가장 빛나는 순간에</span>
 
-          <span>- 정현종, '방문객'</span>
-
-          <br />
-
-          <span>저희 두 사람이 함께하는 새로운 시작에</span>
-
-          <span>귀한 발걸음으로 축복해 주시면 감사하겠습니다.</span>
+          <span>함께해 주세요.</span>
 
           <br />
 
