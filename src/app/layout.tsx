@@ -39,9 +39,6 @@ export const metadata: Metadata = {
     date: false,
     url: false,
   },
-  icons: {
-    icon: '/images/favicon.ico',
-  },
   openGraph: {
     title: 'Young Su & Hyun Ah',
     description: 'Young Su & Hyun Ah',
