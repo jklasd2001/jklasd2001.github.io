@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
-import Script from 'next/script'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale } from 'next-intl/server'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
@@ -10,6 +9,8 @@ import OverlayProvider from 'src/providers/overlay-provider'
 import { ThemeProvider } from 'src/providers/theme-provider'
 
 import './globals.css'
+
+import KakaoScript from 'src/providers/kakao-script'
 
 const sometimesTimes = localFont({
   src: '../../public/fonts/sometimes-times.woff2',
@@ -30,6 +31,7 @@ const pretendard = localFont({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://zerowater.site'),
   title: 'Young Su & Hyun Ah',
   description: 'Young Su & Hyun Ah',
   formatDetection: {
@@ -67,6 +69,8 @@ export default async function RootLayout({
       <body
         className={`${sometimesTimes.variable} ${suit.variable} ${pretendard.variable} antialiased`}
       >
+        <KakaoScript />
+
         <NextIntlClientProvider>
           <NuqsAdapter>
             <ThemeProvider>
@@ -77,11 +81,6 @@ export default async function RootLayout({
           </NuqsAdapter>
         </NextIntlClientProvider>
       </body>
-
-      <Script
-        src="https://developers.kakao.com/sdk/js/kakao.js"
-        strategy="afterInteractive"
-      />
     </html>
   )
 }
