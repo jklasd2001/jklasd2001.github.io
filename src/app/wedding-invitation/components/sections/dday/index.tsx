@@ -84,11 +84,11 @@ const Dday = () => {
 
         <div className="flex flex-col gap-2 items-center">
           <p className="text-pretty break-keep">
-            2026년 3월 7일 토요일 | 오후 13시 40분
+            2026년 3월 7일 토요일 | 오후 1시 40분
           </p>
 
           <p className="text-pretty font-light text-black-default">
-            Saturday, March 7, 2026 | PM 13:40
+            Saturday, March 7, 2026 | PM 1:40
           </p>
         </div>
       </div>

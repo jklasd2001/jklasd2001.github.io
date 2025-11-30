@@ -23,8 +23,8 @@ const ShareSection = () => {
       content: {
         title: '영수♥현아 결혼식에 초대합니다',
         description:
-          '2026년 3월 7일 토요일 오후 12시\n웨스틴조선호텔 서울 그랜드볼룸',
-        imageUrl: 'https://hellomybrand.com/wed/images/sample/ending-3.jpg', // 실제 이미지 URL로 변경 필요
+          '2026년 3월 7일 토요일 오후 1시 40분\n아시아드 시티 웨딩, 부산',
+        imageUrl: 'https://zerowater.site/wedding-invitation/images/intro.webp', // 실제 이미지 URL로 변경 필요
         link: {
           mobileWebUrl: window.location.href,
           webUrl: window.location.href,

@@ -24,7 +24,7 @@ const GreetingSection = () => {
         <Trail open={isInView} duration={150}>
           <span>두 사람의 계절이 만나</span>
 
-          <span>하나의 봄을 피웁니다</span>
+          <span>하나의 봄을 피웁니다.</span>
 
           <span>사랑으로 쌓아온 오늘을</span>
 

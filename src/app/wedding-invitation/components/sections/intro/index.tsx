@@ -14,14 +14,14 @@ const IntroSection = () => {
   // 꽃잎 색상 배열 (하얀색 계열)
 
   return (
-    <section ref={ref} className="flex flex-col relative h-screen">
+    <section ref={ref} className="flex flex-col relative h-svh">
       <Image
         src="/images/intro.webp"
         alt="intro"
         fill={true}
         priority={true}
         sizes="(max-width: 768px) 100vw"
-        className="absolute inset-0 object-cover w-full h-full brightness-65"
+        className="absolute inset-0 object-cover object-[58%_center] w-full h-full brightness-65"
       />
 
       <Trail open={isInView}>
