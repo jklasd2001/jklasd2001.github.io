@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 import Script from 'next/script'
 import { NextIntlClientProvider } from 'next-intl'
@@ -32,6 +32,12 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   title: 'Young Su & Hyun Ah',
   description: 'Young Su & Hyun Ah',
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
 }
 
 export default async function RootLayout({

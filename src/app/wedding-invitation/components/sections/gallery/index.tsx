@@ -28,7 +28,13 @@ const GalleryDialog = ({
 }) => {
   return (
     <Dialog open={isOpen} onOpenChange={close}>
-      <DialogContent className="w-full max-w-[448px] rounded-none h-screen flex flex-col justify-center p-0 bg-white">
+      <DialogContent
+        className="w-full max-w-[448px] rounded-none h-dvh max-h-dvh flex flex-col justify-center p-0 bg-white"
+        style={{
+          paddingTop: 'env(safe-area-inset-top)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
+        }}
+      >
         <DialogTitle className="sr-only">갤러리 사진</DialogTitle>
         <DialogDescription className="sr-only">
           갤러리 사진 전체 화면 보기
@@ -52,10 +58,10 @@ const GalleryDialog = ({
                   <Image
                     src={`/images/image-${index + 1}.webp`}
                     alt={`갤러리 사진 ${index + 1}`}
-                    width={1200}
-                    height={1600}
-                    quality={100}
-                    sizes="(max-width: 768px) 100vw, 448px"
+                    width={450}
+                    height={600}
+                    quality={85}
+                    sizes="448px"
                     className="w-full h-auto"
                     priority={isNearInitial}
                     loading={isNearInitial ? 'eager' : 'lazy'}
@@ -99,8 +105,8 @@ const GallerySection = () => {
                   src={`/images/image-${index + 1}.webp`}
                   alt={`갤러리 썸네일 ${index + 1}`}
                   fill={true}
-                  quality={100}
-                  sizes="(max-width: 768px) 33vw, 200px"
+                  quality={75}
+                  sizes="33vw"
                   className="object-cover cursor-pointer transition-opacity hover:opacity-90"
                   onClick={() => openGallery(index)}
                   priority={isAboveFold}
