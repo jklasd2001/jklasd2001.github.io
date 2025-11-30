@@ -116,7 +116,7 @@ const AccountSection = () => {
         </div>
 
         {/* Accordion */}
-        <Accordion type="single" collapsible defaultValue="groom">
+        <Accordion type="single" collapsible>
           <AccordionItem
             value="groom"
             className="bg-white rounded-lg mb-3 overflow-hidden shadow-sm"

@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import { overlay } from 'overlay-kit'
 
-import { AspectRatio } from 'src/components/ui/aspect-ratio'
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +15,68 @@ import {
   DialogTitle,
 } from 'src/components/ui/dialog'
 
+const TOTAL_IMAGES = 26
+
+const GalleryDialog = ({
+  isOpen,
+  close,
+  initialIndex,
+}: {
+  isOpen: boolean
+  close: () => void
+  initialIndex: number
+}) => {
+  return (
+    <Dialog open={isOpen} onOpenChange={close}>
+      <DialogContent className="w-full max-w-[448px] rounded-none h-screen flex flex-col justify-center p-0 bg-white">
+        <DialogTitle className="sr-only">갤러리 사진</DialogTitle>
+        <DialogDescription className="sr-only">
+          갤러리 사진 전체 화면 보기
+        </DialogDescription>
+
+        <Carousel
+          className="w-full"
+          opts={{
+            startIndex: initialIndex,
+            loop: true,
+          }}
+        >
+          <CarouselContent>
+            {Array.from({ length: TOTAL_IMAGES }).map((_, index) => {
+              const isNearInitial = Math.abs(index - initialIndex) <= 2
+              return (
+                <CarouselItem
+                  key={index}
+                  className="flex justify-center items-center"
+                >
+                  <Image
+                    src={`/images/image-${index + 1}.webp`}
+                    alt={`갤러리 사진 ${index + 1}`}
+                    width={1200}
+                    height={1600}
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 448px"
+                    className="w-full h-auto"
+                    priority={isNearInitial}
+                    loading={isNearInitial ? 'eager' : 'lazy'}
+                  />
+                </CarouselItem>
+              )
+            })}
+          </CarouselContent>
+        </Carousel>
+      </DialogContent>
+    </Dialog>
+  )
+}
+
 const GallerySection = () => {
+  const openGallery = (index: number) => {
+    overlay.open(({ close, isOpen }) => (
+      <GalleryDialog isOpen={isOpen} close={close} initialIndex={index} />
+    ))
+  }
+
   return (
     <section className="py-20">
       <div className="flex flex-col gap-6 mb-10">
@@ -30,49 +90,21 @@ const GallerySection = () => {
       </div>
 
       <div className="w-full grid grid-cols-3 gap-[2px]">
-        {Array.from({ length: 5 }).map((_, index) => {
+        {Array.from({ length: TOTAL_IMAGES }).map((_, index) => {
+          const isAboveFold = index < 9
           return (
             <div key={index} className="relative w-full h-[148px]">
               <div className="absolute w-full h-full">
                 <Image
-                  src={`/images/carousel-${index + 1}.jpg`}
-                  alt="gallery"
+                  src={`/images/image-${index + 1}.webp`}
+                  alt={`갤러리 썸네일 ${index + 1}`}
                   fill={true}
-                  sizes="33vw"
-                  key={index}
-                  className="object-cover"
-                  onClick={() => {
-                    overlay.open(({ close, isOpen }) => (
-                      <Dialog open={isOpen} onOpenChange={close}>
-                        <DialogContent className="w-full max-w-[448px] rounded-none h-screen items-center p-0 bg-white">
-                          <DialogTitle className="sr-only">갤러리 사진</DialogTitle>
-                          <DialogDescription className="sr-only">
-                            갤러리 사진 전체 화면 보기
-                          </DialogDescription>
-
-                          <Carousel className="w-full">
-                            <CarouselContent>
-                              {Array.from({ length: 5 }).map((_, index) => {
-                                return (
-                                  <CarouselItem key={index}>
-                                    <AspectRatio ratio={4 / 3}>
-                                      <Image
-                                        src={`/images/carousel-${index + 1}.jpg`}
-                                        alt="gallery"
-                                        fill={true}
-                                        sizes="(max-width: 768px) 100vw, 448px"
-                                        className="object-cover"
-                                      />
-                                    </AspectRatio>
-                                  </CarouselItem>
-                                )
-                              })}
-                            </CarouselContent>
-                          </Carousel>
-                        </DialogContent>
-                      </Dialog>
-                    ))
-                  }}
+                  quality={100}
+                  sizes="(max-width: 768px) 33vw, 200px"
+                  className="object-cover cursor-pointer transition-opacity hover:opacity-90"
+                  onClick={() => openGallery(index)}
+                  priority={isAboveFold}
+                  loading={isAboveFold ? 'eager' : 'lazy'}
                 />
               </div>
             </div>

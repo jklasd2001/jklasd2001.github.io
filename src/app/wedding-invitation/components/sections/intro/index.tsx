@@ -16,12 +16,12 @@ const IntroSection = () => {
   return (
     <section ref={ref} className="flex flex-col relative h-screen">
       <Image
-        src="/images/intro.jpg"
+        src="/images/intro.webp"
         alt="intro"
         fill={true}
         priority={true}
         sizes="(max-width: 768px) 100vw"
-        className="absolute inset-0 object-cover w-full h-full"
+        className="absolute inset-0 object-cover w-full h-full brightness-65"
       />
 
       <Trail open={isInView}>
