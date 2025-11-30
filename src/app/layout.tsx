@@ -32,6 +32,25 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   title: 'Young Su & Hyun Ah',
   description: 'Young Su & Hyun Ah',
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+    date: false,
+    url: false,
+  },
+  icons: {
+    icon: '/images/favicon.ico',
+  },
+  openGraph: {
+    title: 'Young Su & Hyun Ah',
+    description: 'Young Su & Hyun Ah',
+    images: '/images/intro.webp',
+    url: 'https://zerowater.site/wedding-invitation',
+    siteName: 'Young Su & Hyun Ah',
+    locale: 'ko_KR',
+    type: 'website',
+  },
 }
 
 export const viewport: Viewport = {
