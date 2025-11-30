@@ -49,7 +49,8 @@ const GalleryDialog = ({
         >
           <CarouselContent>
             {Array.from({ length: TOTAL_IMAGES }).map((_, index) => {
-              const isNearInitial = Math.abs(index - initialIndex) <= 2
+              const distance = Math.abs(index - initialIndex)
+
               return (
                 <CarouselItem
                   key={index}
@@ -63,8 +64,8 @@ const GalleryDialog = ({
                     quality={85}
                     sizes="448px"
                     className="w-full h-auto"
-                    priority={isNearInitial}
-                    loading={isNearInitial ? 'eager' : 'lazy'}
+                    priority={distance <= 2}
+                    loading="eager"
                   />
                 </CarouselItem>
               )
