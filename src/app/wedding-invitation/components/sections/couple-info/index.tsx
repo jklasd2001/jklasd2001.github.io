@@ -22,15 +22,15 @@ interface ContactPerson {
 }
 
 const groomContacts: ContactPerson[] = [
-  { name: '김영수', relation: '신랑', phone: '010-1234-5678' },
-  { name: '김종건', relation: '신랑 아버지', phone: '010-2234-5678' },
-  { name: '신혜련', relation: '신랑 어머니', phone: '010-3234-5678' },
+  { name: '김영수', relation: '신랑', phone: '010-4176-4839' },
+  { name: '김종건', relation: '신랑 아버지', phone: '010-9197-4849' },
+  { name: '신혜련', relation: '신랑 어머니', phone: '010-4156-8945' },
 ]
 
 const brideContacts: ContactPerson[] = [
-  { name: '박현아', relation: '신부', phone: '010-4234-5678' },
-  { name: '박병호', relation: '신부 아버지', phone: '010-5234-5678' },
-  { name: '김영자', relation: '신부 어머니', phone: '010-6234-5678' },
+  { name: '박현아', relation: '신부', phone: '010-7223-5249' },
+  { name: '박병호', relation: '신부 아버지', phone: '010-5346-5694' },
+  { name: '김영자', relation: '신부 어머니', phone: '010-6539-2040' },
 ]
 
 const ContactCard = ({ contact }: { contact: ContactPerson }) => {

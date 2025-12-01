@@ -22,19 +22,19 @@ const groomAccounts: AccountInfo[] = [
     name: '김영수',
     relation: '신랑',
     bank: '토스뱅크',
-    accountNumber: '123-456-789012',
+    accountNumber: '1000-2351-6480',
   },
   {
     name: '김종건',
     relation: '신랑 아버지',
-    bank: '토스뱅크',
-    accountNumber: '123-456-789012',
+    bank: '기업',
+    accountNumber: '010-9197-4849',
   },
   {
     name: '신혜련',
     relation: '신랑 어머니',
-    bank: '토스뱅크',
-    accountNumber: '123-456-789012',
+    bank: '농협',
+    accountNumber: '352-1324-5787-03',
   },
 ]
 
@@ -42,20 +42,20 @@ const brideAccounts: AccountInfo[] = [
   {
     name: '박현아',
     relation: '신부',
-    bank: '토스뱅크',
-    accountNumber: '123-456-789012',
+    bank: '국민',
+    accountNumber: '231402-04-262219',
   },
   {
     name: '박병호',
     relation: '신부 아버지',
-    bank: '토스뱅크',
-    accountNumber: '123-456-789012',
+    bank: '기업',
+    accountNumber: '185-018575-01-028',
   },
   {
     name: '김영자',
     relation: '신부 어머니',
-    bank: '토스뱅크',
-    accountNumber: '123-456-789012',
+    bank: '농협',
+    accountNumber: '113-12-579007',
   },
 ]
 
