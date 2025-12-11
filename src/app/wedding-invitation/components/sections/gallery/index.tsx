@@ -15,7 +15,7 @@ import {
   DialogTitle,
 } from 'src/components/ui/dialog'
 
-const TOTAL_IMAGES = 26
+const TOTAL_IMAGES = 22
 
 const GalleryDialog = ({
   isOpen,
