@@ -32,8 +32,8 @@ const pretendard = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zerowater.site'),
-  title: 'Young Su & Hyun Ah',
-  description: 'Young Su & Hyun Ah',
+  title: 'Young Su & Hyun A',
+  description: 'Young Su & Hyun A',
   formatDetection: {
     address: false,
     email: false,
@@ -42,11 +42,11 @@ export const metadata: Metadata = {
     url: false,
   },
   openGraph: {
-    title: 'Young Su & Hyun Ah',
-    description: 'Young Su & Hyun Ah',
+    title: 'Young Su & Hyun A',
+    description: 'Young Su & Hyun A',
     images: '/images/intro.webp',
     url: 'https://zerowater.site/wedding-invitation',
-    siteName: 'Young Su & Hyun Ah',
+    siteName: 'Young Su & Hyun A',
     locale: 'ko_KR',
     type: 'website',
   },
