@@ -14,7 +14,7 @@ const IntroSection = () => {
   // 꽃잎 색상 배열 (하얀색 계열)
 
   return (
-    <section ref={ref} className="flex flex-col relative h-svh">
+    <section ref={ref} className="flex flex-col relative min-h-svh max-h-lvh">
       <Image
         src="/images/intro.webp"
         alt="intro"
