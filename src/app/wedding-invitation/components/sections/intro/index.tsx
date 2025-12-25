@@ -2,6 +2,7 @@
 
 import { useInView } from '@react-spring/web'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 import Trail from 'src/components/trail'
 
@@ -11,10 +12,20 @@ const IntroSection = () => {
     once: true,
   })
 
-  // 꽃잎 색상 배열 (하얀색 계열)
+  const [height, setHeight] = useState<number>(0)
+
+  useEffect(() => {
+    // 초기 뷰포트 높이를 고정
+    const initialHeight = window.innerHeight
+    setHeight(initialHeight)
+  }, [])
 
   return (
-    <section ref={ref} className="flex flex-col relative h-lvh">
+    <section
+      ref={ref}
+      className="flex flex-col relative"
+      style={{ height: height || '100vh' }}
+    >
       <Image
         src="/images/intro.webp"
         alt="intro"
