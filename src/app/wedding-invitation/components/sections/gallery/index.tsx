@@ -15,7 +15,7 @@ import {
   DialogTitle,
 } from 'src/components/ui/dialog'
 
-const TOTAL_IMAGES = 22
+const TOTAL_IMAGES = 24
 
 const GalleryDialog = ({
   isOpen,
@@ -29,10 +29,11 @@ const GalleryDialog = ({
   return (
     <Dialog open={isOpen} onOpenChange={close}>
       <DialogContent
-        className="w-full max-w-[448px] rounded-none h-dvh max-h-dvh flex flex-col justify-center p-0 bg-white"
+        className="w-full max-w-[448px] rounded-none h-dvh max-h-dvh flex flex-col justify-center p-0 bg-white touch-pan-x touch-pan-y"
         style={{
           paddingTop: 'env(safe-area-inset-top)',
           paddingBottom: 'env(safe-area-inset-bottom)',
+          touchAction: 'pan-x pan-y',
         }}
       >
         <DialogTitle className="sr-only">갤러리 사진</DialogTitle>
@@ -57,13 +58,14 @@ const GalleryDialog = ({
                   className="flex justify-center items-center"
                 >
                   <Image
-                    src={`/images/image-${index + 1}.webp`}
+                    src={`/images/image-${index + 1}.jpg`}
                     alt={`갤러리 사진 ${index + 1}`}
                     width={450}
                     height={600}
                     quality={85}
                     sizes="448px"
-                    className="w-full h-auto"
+                    className="w-full h-auto select-none pointer-events-none"
+                    draggable={false}
                     priority={distance <= 2}
                     loading="eager"
                   />
@@ -103,7 +105,7 @@ const GallerySection = () => {
             <div key={index} className="relative w-full h-[148px]">
               <div className="absolute w-full h-full">
                 <Image
-                  src={`/images/image-${index + 1}.webp`}
+                  src={`/images/image-${index + 1}.jpg`}
                   alt={`갤러리 썸네일 ${index + 1}`}
                   fill={true}
                   quality={75}
