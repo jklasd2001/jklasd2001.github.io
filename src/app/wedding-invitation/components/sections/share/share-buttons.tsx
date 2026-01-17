@@ -22,7 +22,7 @@ const ShareButtons = () => {
       content: {
         title: '영수♥현아 결혼식에 초대합니다',
         description:
-          '2026년 3월 7일 토요일 오후 1시 40분\n아시아드 시티 웨딩, 부산',
+          '2026년 3월 7일 토요일 오후 1시 40분\n아시아드시티 웨딩홀 고흐홀, 부산',
         imageUrl: 'https://zerowater.site/images/intro.webp',
         link: {
           mobileWebUrl: window.location.href,

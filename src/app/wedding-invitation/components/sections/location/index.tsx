@@ -53,7 +53,7 @@ const LocationSection = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-center gap-2">
-            <span className="text-gray-800">아시아드시티 웨딩홀</span>
+            <span className="text-gray-800">아시아드시티 웨딩홀 고흐홀</span>
 
             <a href="tel:051-500-4500">
               <svg
