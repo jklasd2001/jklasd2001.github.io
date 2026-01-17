@@ -53,7 +53,9 @@ const LocationSection = () => {
 
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-center gap-2">
-            <span className="text-gray-800">아시아드시티 웨딩홀 고흐홀</span>
+            <span className="text-gray-800">
+              부산 아시아드시티웨딩홀 1F 고흐홀
+            </span>
 
             <a href="tel:051-500-4500">
               <svg
@@ -158,7 +160,7 @@ const LocationSection = () => {
       <div className="flex flex-col gap-4 px-8">
         <Row icon={<Car />} title="자차">
           <p className="flex flex-col gap-1 text-sm text-[#111]">
-            <span>네비게이션: '아시아드 시티 웨딩' 검색</span>
+            <span>네비게이션: '부산 아시아드시티웨딩홀' 검색</span>
 
             <span>부산광역시 연제구 월드컵대로 344</span>
           </p>
