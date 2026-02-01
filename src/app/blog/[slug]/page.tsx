@@ -30,14 +30,20 @@ async function getPost(slug: string): Promise<Post | null> {
     return null
   }
 
+  // 마크다운 이미지 경로를 public 경로로 변환
+  const fixedContent = content.replace(
+    /!\[([^\]]*)\]\(\.\/images\//g,
+    (_, alt) => `![${alt}](/posts/${slug}/images/`,
+  )
+
   // 마크다운을 HTML로 변환
-  const processedContent = await remark().use(html).process(content)
+  const processedContent = await remark().use(html).process(fixedContent)
 
   return {
     slug,
     title: data.title || slug,
     description: data.description || '',
-    date: data.date || '',
+    date: data.date instanceof Date ? data.date.toISOString() : data.date || '',
     published: data.published || true,
     content: processedContent.toString(),
   }

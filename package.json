@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "preinstall": "pnpx only-allow bun",
+    "preinstall": "npx only-allow bun",
     "dev": "next dev --turbopack",
     "dev:clean": "rm -rf .next && bun dev",
     "build": "next build",

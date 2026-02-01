@@ -1,0 +1,121 @@
+[
+  {
+    "title": "Josh W Comeau",
+    "url": "https://www.joshwcomeau.com",
+    "description": "인터랙티브한 설명과 함께하는 CSS, React 심화 블로그",
+    "category": "blog",
+    "tags": ["CSS", "React", "애니메이션"]
+  },
+  {
+    "title": "overreacted (Dan Abramov)",
+    "url": "https://overreacted.io",
+    "description": "React 핵심 개발자의 깊이 있는 기술 에세이",
+    "category": "blog",
+    "tags": ["React", "JavaScript"]
+  },
+  {
+    "title": "kentcdodds.com",
+    "url": "https://kentcdodds.com/blog",
+    "description": "테스팅, React 패턴, 웹 개발 실전 노하우",
+    "category": "blog",
+    "tags": ["React", "Testing", "TypeScript"]
+  },
+  {
+    "title": "toast.log (토스 기술 블로그)",
+    "url": "https://toss.tech",
+    "description": "토스 프론트엔드 팀의 기술 경험과 도전 공유",
+    "category": "blog",
+    "tags": ["프론트엔드", "디자인시스템", "DX"]
+  },
+  {
+    "title": "카카오 기술 블로그",
+    "url": "https://tech.kakao.com/blog",
+    "description": "카카오의 다양한 기술 챌린지와 솔루션",
+    "category": "blog",
+    "tags": ["프론트엔드", "백엔드", "인프라"]
+  },
+  {
+    "title": "Fireship",
+    "url": "https://www.youtube.com/@Fireship",
+    "description": "빠르고 재미있는 웹 개발 트렌드 & 기술 설명",
+    "category": "youtube",
+    "tags": ["웹개발", "트렌드", "튜토리얼"]
+  },
+  {
+    "title": "Theo - t3.gg",
+    "url": "https://www.youtube.com/@t3dotgg",
+    "description": "웹 개발 생태계 깊이 있는 분석과 의견",
+    "category": "youtube",
+    "tags": ["TypeScript", "Next.js", "오피니언"]
+  },
+  {
+    "title": "코딩애플",
+    "url": "https://www.youtube.com/@codingapple",
+    "description": "쉽고 재미있는 한국어 웹 개발 강의",
+    "category": "youtube",
+    "tags": ["JavaScript", "React", "입문"]
+  },
+  {
+    "title": "개발바닥",
+    "url": "https://www.youtube.com/@devbadak",
+    "description": "현직 개발자들의 솔직한 개발 이야기",
+    "category": "youtube",
+    "tags": ["커리어", "개발문화", "토크"]
+  },
+  {
+    "title": "Raycast",
+    "url": "https://www.raycast.com",
+    "description": "생산성을 극대화하는 macOS 런처 & 개발 도구",
+    "category": "tool",
+    "tags": ["생산성", "macOS", "자동화"]
+  },
+  {
+    "title": "Excalidraw",
+    "url": "https://excalidraw.com",
+    "description": "손그림 스타일의 간편한 다이어그램 & 와이어프레임 도구",
+    "category": "tool",
+    "tags": ["다이어그램", "협업", "디자인"]
+  },
+  {
+    "title": "Can I Use",
+    "url": "https://caniuse.com",
+    "description": "브라우저 호환성 확인 필수 도구",
+    "category": "tool",
+    "tags": ["호환성", "브라우저", "CSS"]
+  },
+  {
+    "title": "Bundlephobia",
+    "url": "https://bundlephobia.com",
+    "description": "npm 패키지의 번들 사이즈를 미리 확인",
+    "category": "tool",
+    "tags": ["번들", "성능", "npm"]
+  },
+  {
+    "title": "React 공식 문서",
+    "url": "https://react.dev",
+    "description": "React 최신 공식 문서 (react.dev)",
+    "category": "docs",
+    "tags": ["React", "공식문서"]
+  },
+  {
+    "title": "TypeScript 핸드북",
+    "url": "https://www.typescriptlang.org/docs/handbook",
+    "description": "TypeScript 공식 핸드북과 레퍼런스",
+    "category": "docs",
+    "tags": ["TypeScript", "공식문서"]
+  },
+  {
+    "title": "MDN Web Docs",
+    "url": "https://developer.mozilla.org/ko",
+    "description": "웹 기술의 바이블, 한국어 지원",
+    "category": "docs",
+    "tags": ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    "title": "Next.js 공식 문서",
+    "url": "https://nextjs.org/docs",
+    "description": "Next.js 프레임워크 공식 가이드",
+    "category": "docs",
+    "tags": ["Next.js", "공식문서", "SSR"]
+  }
+]

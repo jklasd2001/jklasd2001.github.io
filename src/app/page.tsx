@@ -21,6 +21,12 @@ export default function Home() {
             >
               블로그 보기
             </Link>
+            <Link
+              href="/bookmarks"
+              className="bg-gray-100 text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-200 transition-colors font-medium"
+            >
+              북마크 보기
+            </Link>
           </div>
         </div>
       </div>
